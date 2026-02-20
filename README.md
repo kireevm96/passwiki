@@ -1,31 +1,42 @@
-## Настройка
+Скрипт установки [Passwall](https://github.com/amirhosseinchoghaei/Passwall) для OpenWRT, выбирать PasswallV2
 
-1. Шаг 1 — общие настройки
+## Настройка
+1. Во вкладке Rule Manage, указать
+  - GeoIP Update URL - https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geoip@release/geoip.dat
+  - Geosite Update URL - https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite@release/geosite.dat
+![Шаг 2_2](2_2.png)
+  - и запустить Manually update
+
+2. Добавим правила для машрутизации в блок Sing-Box/Xray Shunt Rule 
+  - [DEFAULT.JSON от hydraponique](https://github.com/hydraponique/roscomvpn-routing/blob/main/HAPP/DEFAULT.JSON)
+![Шаг 2_3](2_3.png)
+
+![Шаг 3](3.png)
+
+3. Добавим подписку во вкладке Node Subscribe, и запустим сихронизацию кнопкой Manual subscription
+![Шаг 4](4.png)
+
+![Шаг 5](5.png)
+
+![Шаг 6](6.png)
+
+4. Добавим Xray Balancing, он нужен для балансировки и в случае недоступности одного из узлов.
 ![Настройка 1](7.png)
 
-2. Шаг 2 — конфигурация профиля
-![Настройка 2](8.png)
-
-3. Шаг 3 — настройки маршрутизации
-![Настройка 3](3.png)
-
-4. Шаг 4 — выбор режима
 ![Настройка 4](10.png)
 
-5. Шаг 5 — проверка соединения
 ![Настройка 5](11.png)
 
-6. Шаг 6 — логирование и отладка
+2. Добавим Xray Shunt, он требуеться для работы списков машрутизации, и сразу применим правила.
+![Настройка 2](8.png)
+
 ![Настройка 6](12.png)
 
-7. Шаг 7 — дополнительные параметры
+- Не забыть указать, сотвествие куда какой трафик машрутизировать
+
 ![Настройка 7](13.png)
 
-8. Шаг 8 — финальная проверка
+8. Переходим Basic Settings, и выбираем наш Xray Shunt и включаем Main switch
 ![Настройка 8](14.png)
 
-9. Справочные скриншоты
-![Справка 1](15.png)
 
-10. Справочные скриншоты 2
-![Справка 2](16.png)
